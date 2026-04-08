@@ -5,22 +5,42 @@
   --color-primary-100: #e0f2fe;
   --color-primary-500: #0ea5e9;
   --color-primary-600: #0284c7;
+  --color-primary-900: #0c4a6e;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  @apply bg-slate-100 text-slate-900 antialiased overflow-hidden;
+  /* premium noise texture */
+  background-image: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+  background-image: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
 }
 
 .calendar-shadow {
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1),
-              0 10px 20px -5px rgba(0, 0, 0, 0.05),
-              0 0 0 1px rgba(0,0,0,0.02);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.25),
+              0 20px 40px -10px rgba(0, 0, 0, 0.1),
+              0 0 0 1px rgba(0,0,0,0.05);
 }
 
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+.dark .calendar-shadow {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8),
+              0 20px 40px -10px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255,255,255,0.05);
 }
 
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+/* Custom Scrollbar for Notes Panel */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
 }
