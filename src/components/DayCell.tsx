@@ -51,7 +51,7 @@ export const DayCell = memo(function DayCell({
 
   return (
     <div 
-      className="relative flex items-center justify-center h-10 sm:h-12 lg:h-14 group"
+      className="relative flex items-center justify-center w-full aspect-square min-h-[40px] group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -80,7 +80,7 @@ export const DayCell = memo(function DayCell({
       <button
         onClick={handleClick}
         className={cn(
-          "relative z-10 w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full text-sm sm:text-base font-semibold transition-all duration-200 active:scale-95 will-change-transform",
+          "relative z-10 w-[85%] h-[85%] min-w-[36px] min-h-[36px] md:min-w-[44px] md:min-h-[44px] flex items-center justify-center rounded-full text-sm lg:text-base font-semibold transition-all duration-200 active:scale-95 will-change-transform",
           
           !isCurrentMonthStrict && (darkMode ? "text-slate-700 font-medium" : "text-slate-300 font-medium"),
           isCurrentMonthStrict && !selected && !today && (darkMode ? "text-slate-300 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-100"),

@@ -3,6 +3,7 @@ import { useCalendarStore } from '../store/calendarStore';
 import { useSelectionStore } from '../store/selectionStore';
 import { useNotesStore } from '../store/notesStore';
 import { useCalendar } from '../hooks/useCalendar';
+import { useHoverRange } from '../hooks/useHoverRange';
 import { cn } from '../lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,9 +18,9 @@ export function CalendarGrid() {
 
   const startTs = useSelectionStore(s => s.startTs);
   const endTs = useSelectionStore(s => s.endTs);
-  const hoverTs = useSelectionStore(s => s.hoverTs);
   const selectDate = useSelectionStore(s => s.selectDate);
-  const setHoverDate = useSelectionStore(s => s.setHoverDate);
+  
+  const { hoverTs, setHoverDate } = useHoverRange();
 
   const notes = useNotesStore(s => s.notes);
 
