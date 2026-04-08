@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+.calendar-shadow {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1),
+              0 10px 20px -5px rgba(0, 0, 0, 0.05),
+              0 0 0 1px rgba(0,0,0,0.02);
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
